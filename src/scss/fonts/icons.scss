@@ -1,0 +1,133 @@
+%ic {
+	font-family: 'icons';
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+[class*='_icon-'] {
+	&:before {
+		@extend %ic;
+		display: block;
+	}
+}
+
+._icon-arrow:before {
+  content: "\e900";
+  color: #e62e2e;
+}
+._icon-box:before {
+  content: "\e901";
+  color: #fff;
+}
+._icon-calculator:before {
+  content: "\e902";
+  color: #fff;
+}
+._icon-calendar:before {
+  content: "\e903";
+  color: #e62e2e;
+}
+._icon-chevron-down:before {
+  content: "\e904";
+  color: #e62e2e;
+}
+._icon-code:before {
+  content: "\e905";
+  color: #e62e2e;
+}
+._icon-device:before {
+  content: "\e906";
+  color: #e62e2e;
+}
+._icon-gmail:before {
+  content: "\e907";
+  color: #e62e2e;
+}
+._icon-hearpods:before {
+  content: "\e908";
+  color: #e62e2e;
+}
+._icon-image:before {
+  content: "\e909";
+  color: #fff;
+}
+._icon-label:before {
+  content: "\e90a";
+  color: #e62e2e;
+}
+._icon-log-in:before {
+  content: "\e90b";
+  color: #e62e2e;
+}
+._icon-map:before {
+  content: "\e90c";
+  color: #e62e2e;
+}
+._icon-phone:before {
+  content: "\e90d";
+  color: #e62e2e;
+}
+._icon-play:before {
+  content: "\e90e";
+  color: #fff;
+}
+._icon-qr:before {
+  content: "\e90f";
+  color: #e62e2e;
+}
+._icon-quote:before {
+  content: "\e910";
+  color: #fff;
+}
+._icon-ruso:before {
+  content: "\e911";
+  color: #828a99;
+}
+._icon-scales:before {
+  content: "\e912";
+  color: #e62e2e;
+}
+._icon-search-more:before {
+  content: "\e913";
+  color: #fff;
+}
+._icon-statistic:before {
+  content: "\e914";
+  color: #fff;
+}
+._icon-statistic-2:before {
+  content: "\e915";
+  color: #e62e2e;
+}
+._icon-store:before {
+  content: "\e916";
+  color: #e62e2e;
+}
+._icon-telegram:before {
+  content: "\e917";
+  color: #e62e2e;
+}
+._icon-viber:before {
+  content: "\e918";
+  color: #e62e2e;
+}
+._icon-vk:before {
+  content: "\e919";
+  color: #e62e2e;
+}
+._icon-web:before {
+  content: "\e91a";
+  color: #fff;
+}
+._icon-whatsapp:before {
+  content: "\e91b";
+  color: #e62e2e;
+}
+._icon-youtube:before {
+  content: "\e91c";
+  color: #e62e2e;
+}

@@ -1,0 +1,263 @@
+//Заголовки, общие БЭМ блоки и т.д.
+.button {
+	display: inline-block;
+	@media (min-width: $lowestScreen) {
+		padding: rem(16) rem(40);
+	}
+	@media (max-width: $lowestScreen) {
+		padding: rem(16) rem(32);
+	}
+	border-radius: rem(4);
+	background-color: $main-color;
+
+	@include adaptiveValue('font-size', 16, 14, 0, 768, 375);
+	font-weight: 600;
+	line-height: 160%;
+	color: $white-color;
+
+	transition: all 0.3s ease;
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: #b22323;
+		}
+	}
+}
+
+.input {
+	display: inline-block;
+	padding: rem(16) rem(24);
+	border-radius: rem(4);
+	background-color: $bg-color;
+
+	color: $txt-3-color;
+	font-size: rem(16);
+	line-height: 160%;
+
+	&._input-phone-mask {
+		letter-spacing: rem(2);
+	}
+}
+
+.preview-icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	&__icon-wrapper {
+		position: relative;
+
+		&::before {
+			content: '';
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			transform: translate(-50%, -50%);
+
+			display: block;
+			width: rem(60);
+			height: rem(60);
+			border-radius: 50%;
+			background-color: $main-color;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			z-index: 0;
+			top: 0;
+			left: 0;
+			transform: translate(-50%, -50%);
+
+			display: block;
+			width: rem(90);
+			height: rem(90);
+			border-radius: 50%;
+			border: 1px solid rgba(255, 255, 255, 0.15);
+			background: rgba(255, 255, 255, 0.2);
+			backdrop-filter: blur(2.5px);
+		}
+
+		> * {
+			position: absolute;
+			z-index: 2;
+			top: 0;
+			left: 0;
+			transform: translate(-50%, -50%);
+		}
+	}
+}
+
+.title-font {
+	@include adaptiveValue('font-size', 36, 28, 0, 768, 375);
+
+	@media (min-width: $tablet) {
+		@include adaptiveValue('font-size', 48, 36, 0, 1328, 1024);
+	}
+
+	font-weight: 600;
+	line-height: 140%;
+}
+
+.text-font {
+	@include adaptiveValue('font-size', 16, 14, 0, 768, 375);
+	line-height: 160%;
+}
+
+.slider-arrow {
+	width: rem(56);
+	height: rem(56);
+	border-radius: 50%;
+	background-color: rgba(255, 255, 255, 0.9);
+	box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05);
+	backdrop-filter: blur(5px);
+
+	font-size: rem(7);
+
+	transition: all 0.3s ease;
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: rgba(255, 255, 255, 0.6);
+			transform: scale(1.1);
+		}
+	}
+}
+
+.arrow-next {
+	&::before {
+		transform: rotate(-90deg);
+	}
+}
+
+.arrow-prev {
+	&::before {
+		transform: rotate(90deg);
+	}
+}
+
+.form-feedback {
+	background-color: $bg-color;
+
+	&__container {
+	}
+
+	&__body {
+		position: relative;
+
+		@media (max-width: $mobile) {
+			@include adaptiveValue('padding-top', 40, 25, 0, 768, 375);
+			@include adaptiveValue('padding-left', 60, 30, 0, 768, 375);
+			@include adaptiveValue('padding-right', 60, 30, 0, 768, 375);
+			@include adaptiveValue('padding-bottom', 40, 25, 0, 768, 375);
+		}
+
+		@media (min-width: $mobile) {
+			@include adaptiveValue('padding-top', 80, 40, 0, $maxWidthContainer, 1024);
+			@include adaptiveValue('padding-left', 100, 60, 0, $maxWidthContainer, 1024);
+			@include adaptiveValue('padding-right', 100, 60, 0, $maxWidthContainer, 1024);
+			@include adaptiveValue('padding-bottom', 80, 40, 0, $maxWidthContainer, 1024);
+		}
+	}
+
+	&__inner {
+		position: relative;
+		z-index: 1;
+	}
+
+	&__title {
+		&_white {
+			color: $white-color;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: rem(10);
+		}
+	}
+
+	&__text {
+		&_white {
+			color: $white-color;
+		}
+
+		&:not(:last-child) {
+			@include adaptiveValue('margin-bottom', 50, 30, 0, $maxWidthContainer, 1024);
+		}
+	}
+
+	&__form {
+		display: flex;
+		gap: rem(16);
+
+		@media (max-width: $tablet) {
+			flex-direction: column;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: rem(10);
+		}
+	}
+
+	&__inputs {
+		min-width: 0;
+		flex-shrink: 1;
+
+		display: flex;
+		@media (max-width: $mobile) {
+			flex-wrap: wrap;
+		}
+		gap: rem(16);
+	}
+
+	&__input {
+		min-width: rem(120);
+
+		@media (max-width: $mobileSmall) {
+			flex-shrink: 0;
+		}
+
+		@media (max-width: $tablet) {
+			flex: 1 1 auto;
+		}
+	}
+
+	&__button {
+		flex-shrink: 0;
+	}
+
+	&__private {
+		color: $txt-3-color;
+		font-size: rem(13);
+		line-height: 160%;
+
+		a {
+			text-decoration: underline;
+		}
+
+		&_grey {
+			color: rgba($white-color, 0.6);
+		}
+	}
+
+	&__background-ibg {
+		position: absolute;
+		z-index: 0;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+// <br>, который отключается на мобильных экранах
+.br-mobile {
+	@media (max-width: $mobile) {
+		display: none;
+	}
+}
+
+.br-tablet {
+	@media (max-width: $tablet) {
+		display: none;
+	}
+}
