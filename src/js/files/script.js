@@ -22,8 +22,6 @@ menuItemsRevers.forEach((elem, index) => {
 });
 
 window.addEventListener('load', (e) => {
-	console.log('loaded');
-
 	let phoneInputs = document.querySelectorAll('._input-phone-mask');
 	if (phoneInputs.length) {
 		let maskOptions = {

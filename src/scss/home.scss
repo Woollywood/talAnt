@@ -100,6 +100,7 @@
 
 		@media (min-width: $mobile) {
 			display: grid;
+			align-items: center;
 			gap: rem(16);
 			grid-template-columns: 1fr percent(432, $containerWidth);
 		}
@@ -137,13 +138,7 @@
 	}
 
 	&__text {
-		@media (min-width: $lowestScreen) {
-			font-size: rem(18);
-		}
-
-		@media (max-width: $lowestScreen) {
-			font-size: rem(16);
-		}
+		@include adaptiveValue('font-size', 18, 16, 0, 768, 375);
 
 		line-height: 160%;
 
@@ -155,6 +150,24 @@
 			@media (max-width: $lowestScreen) {
 				margin-bottom: rem(30);
 			}
+		}
+	}
+
+	&__advantages {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: rem(5);
+		row-gap: rem(16);
+
+		&:not(:last-child) {
+			margin-bottom: rem(20);
+		}
+	}
+
+	&__button {
+		@media (max-width: $mobileSmall) {
+			display: flex;
+			justify-content: center;
 		}
 	}
 
@@ -183,6 +196,43 @@
 	&__image {
 	}
 
+	&__media-background {
+		@media (min-width: $mobile) {
+			position: absolute;
+			z-index: -1;
+			@include adaptiveValue('top', 60, 40, 0, 1328, 768);
+			right: 0;
+			width: percent(733, $maxWidthContainer);
+
+			img {
+				object-fit: contain;
+			}
+		}
+
+		@media (max-width: $mobile) {
+			width: 80%;
+			margin: 0 auto;
+
+			display: flex;
+			justify-content: center;
+
+			&:not(:last-child) {
+				margin-bottom: rem(52);
+			}
+		}
+	}
+
+	&__image-ibg {
+		@media (min-width: $mobile) {
+			@include adaptiveValue('padding-bottom', 454, 430);
+		}
+
+		@media (max-width: $mobile) {
+			width: 100%;
+			padding-bottom: percent(268, 328);
+		}
+	}
+
 	&__background-ibg {
 		position: absolute;
 		z-index: -1;
@@ -190,6 +240,150 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
+	}
+
+	&__video-link {
+		position: absolute;
+		
+		@media (max-width: $mobile) {
+			top: 0;
+			@include adaptiveValue("left", 0, -35, 0, 768, 320);
+		}
+
+		@media (min-width: $mobile) {
+			@include adaptiveValue('right', 60, 40, 0, $maxWidthContainer, 768);
+
+			@media (min-width: $mobile) {
+				@include adaptiveValue('bottom', 65, 30, 0, 1024, 768);
+			}
+
+			@media (min-width: $tablet) {
+				@include adaptiveValue('bottom', 100, 65, 0, $maxWidthContainer, 1024);
+			}
+		}
+	}
+}
+
+.link-main {
+	display: flex;
+	@include adaptiveValue("gap", 25, 10, 0, 768, 375);
+
+	@media (max-width: $mobile) {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__link-wrapper {
+		position: relative;
+		z-index: 1;
+		width: rem(90);
+		height: rem(90);
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			border-radius: 50%;
+		}
+
+		&::before {
+			border: 1px solid rgba(255, 255, 255, 0.15);
+			background: rgba(255, 255, 255, 0.2);
+			backdrop-filter: blur(2.5px);
+
+			width: 100%;
+			height: 100%;
+		}
+
+		&::after {
+			top: rem(15);
+			left: rem(15);
+			width: rem(60);
+			height: rem(60);
+			background-color: $main-color;
+		}
+	}
+
+	&__link {
+		position: relative;
+		z-index: 2;
+
+		font-size: rem(14);
+	}
+
+	&__text-wrapper {
+		margin-bottom: rem(6);
+		align-self: flex-end;
+	}
+
+	&__title {
+		color: $white-color;
+		flex-wrap: 600;
+		line-height: 160%;
+
+		@media (max-width: $mobile) {
+			text-align: center;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: rem(5);
+		}
+	}
+
+	&__text {
+		color: rgba($white-color, 0.6);
+		font-size: rem(13);
+		line-height: 160%;
+
+		@media (max-width: $mobile) {
+			text-align: center;
+		}
+	}
+}
+
+.advantages-main {
+	&__item {
+		display: flex;
+		gap: rem(16);
+
+		@media (max-width: $lowestScreen) {
+			flex-direction: column;
+		}
+	}
+
+	&__item-icon {
+		position: relative;
+		transform: translateY(rem(2));
+		align-self: flex-start;
+
+		&::before {
+			position: relative;
+			z-index: 1;
+			font-size: rem(24);
+		}
+	}
+
+	&__item-inner {
+		position: absolute;
+		z-index: 0;
+		top: 50%;
+		left: 50%;
+		transform: translate(calc(-50%), -50%);
+		width: 60%;
+		height: 60%;
+		background-color: $white-color;
+	}
+
+	&__item-text {
+		color: $white-color;
+		font-size: rem(16);
+		line-height: 160%;
 	}
 }
 
