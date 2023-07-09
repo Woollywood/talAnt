@@ -139,11 +139,23 @@
 .form-feedback {
 	background-color: $bg-color;
 
+	&_pb {
+		@media (max-width: $tablet) {
+			@include adaptiveValue('padding-bottom', 100, 80, 0, 1024, 768);
+		}
+
+		@media (min-width: $tablet) {
+			@include adaptiveValue('padding-bottom', 100, 80, 0, 1024, 768);
+		}
+	}
+
 	&__container {
 	}
 
 	&__body {
 		position: relative;
+		border-radius: rem(8);
+		overflow: hidden;
 
 		@media (max-width: $mobile) {
 			@include adaptiveValue('padding-top', 40, 25, 0, 768, 375);
