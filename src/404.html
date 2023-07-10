@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{ "title":"HomePage" })
+	<body>
+		<div class="wrapper wrapper_fullpage">
+			@@include('html/_header.htm',{})
+			<main class="page">
+				<section class="page__not-found-page not-found-page">
+					<div class="not-found-page__container">
+						<div class="not-found-page__body">
+							<h1 class="not-found-page__title">404</h1>
+							<div class="not-found-page__subtitle">Страница не найдена</div>
+							<div class="not-found-page__text text-font">Неправильно набран адрес или такой страницы больше не существует.</div>
+							<a class="not-found-page__button button" href="#">Вернуться на главную</a>
+						</div>
+					</div>
+				</section>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_phone-request-popup.htm',{})
+		@@include('html/_thanks-popup.html',{})
+		@@include('html/_login-control-panel-popup.html',{})
+
+		@@include('html/_js.htm',{})
+	</body>
+</html>

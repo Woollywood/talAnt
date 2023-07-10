@@ -468,7 +468,7 @@
 							</h2>
 							<div class="experience__content">
 								<div class="experience__image-ibg">
-									<img src="@img/experience/image.jpg" alt="image" />
+									<img class="_lazy" data-src="@img/experience/image.jpg" alt="image" />
 								</div>
 								<div class="experience__text-wrapper">
 									<div class="experience__content-title text-font">Заказчик:</div>
@@ -717,6 +717,10 @@
 			</main>
 			@@include('html/_footer.htm',{})
 		</div>
+		@@include('html/_phone-request-popup.htm',{})
+		@@include('html/_thanks-popup.html',{})
+		@@include('html/_login-control-panel-popup.html',{})
+
 		@@include('html/_js.htm',{})
 	</body>
 </html>

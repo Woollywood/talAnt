@@ -38,6 +38,28 @@
 	}
 }
 
+.input-password {
+	display: inline-block;
+	gap: rem(16);
+	align-items: center;
+	justify-content: space-between;
+	padding: rem(16) rem(24);
+	border-radius: rem(4);
+	background-color: $white-color;
+
+	color: $txt-3-color;
+	font-size: rem(16);
+	line-height: 160%;
+
+	&._input-phone-mask {
+		letter-spacing: rem(2);
+	}
+
+	input {
+		width: 100%;
+	}
+}
+
 .preview-icon {
 	position: absolute;
 	top: 50%;
@@ -103,6 +125,12 @@
 .text-font {
 	@include adaptiveValue('font-size', 16, 14, 0, 768, 375);
 	line-height: 160%;
+}
+
+.sub-title-font {
+	@include adaptiveValue("font-size", 20, 16, 0, 768, 375);
+	font-weight: 600;
+	line-height: 150%;
 }
 
 .slider-arrow {
@@ -259,6 +287,12 @@
 		width: 100%;
 		height: 100%;
 	}
+}
+
+.popup-title-font {
+	font-size: rem(28);
+	font-weight: 600;
+	line-height: 140%;
 }
 
 // <br>, который отключается на мобильных экранах

@@ -102,7 +102,7 @@ class Popup {
 		this.options.init ? this.initPopups() : null;
 	}
 	initPopups() {
-		this.popupLogging(`Прокинувся`);
+		this.popupLogging(`Проснулся`);
 		this.eventsPopup();
 	}
 	eventsPopup() {
@@ -126,7 +126,7 @@ class Popup {
 						this._selectorOpen = true;
 						this.open();
 						return;
-					} else this.popupLogging(`Йой, не заповнено атрибут у ${buttonOpen.classList}`);
+					} else this.popupLogging(`Ей, не заполнен атрибут у ${buttonOpen.classList}`);
 
 					return;
 				}
@@ -268,7 +268,7 @@ class Popup {
 						},
 					})
 				);
-				this.popupLogging(`Открыл попар`);
+				this.popupLogging(`Открыл попап`);
 			} else this.popupLogging(`Ой, нет такого попапа. Проверьте правильность ввода`);
 		}
 	}

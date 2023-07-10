@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>HomePage</title>
+	<meta charset="UTF-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20230710191613" />
+	<link rel="shortcut icon" href="favicon.ico" />
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- Инициализация кастомного скролла, если у пользователя отключен JS -->
+	<noscript>
+		<style>
+			[data-simplebar] {
+				overflow: auto;
+			}
+		</style>
+	</noscript>
+</head>
+
+<body>
+	<div class="wrapper wrapper_fullpage">
+
+		<!-- TODO убрать перед выкаткой на прод!!! -->
+		<div class="debug-panel" style="display: none;">
+			<div class="debug-panel__popup-show_1" data-popup="#thanks-popup"></div>
+		</div>
+
+		<header class="header">
+			<div class="header__body body-header">
+				<div class="body-header__container">
+					<div class="body-header__body">
+						<div class="body-header__logo">
+							<a class="body-header__logo-wrapper" href="#">
+								<img src="img/logo.svg" alt="logo-img" />
+							</a>
+						</div>
+						<div class="body-header__menu menu">
+							<button type="button" class="menu__icon icon-menu" data-da=".body-header__logo, 768, first"><span></span></button>
+							<nav class="menu__body">
+								<ul class="menu__list">
+									<li class="menu__item"><a class="menu__link" href="#">Видео-обзор</a></li>
+									<li class="menu__item"><a class="menu__link" href="#">Разработка</a></li>
+									<li class="menu__item"><a class="menu__link" href="#">Механика</a></li>
+									<li class="menu__item"><a class="menu__link" href="#">Система работы</a></li>
+									<li class="menu__item"><a class="menu__link" href="#">Разница</a></li>
+									<li class="menu__item"><a class="menu__link" href="#">Сравнение с аналогами</a></li>
+								</ul>
+							</nav>
+						</div>
+						<div class="body-header__more-menu more-menu" data-spollers>
+							<details class="more-menu__details">
+								<summary class="more-menu__title" data-spoller-close>
+									<div class="more-menu__icon-wrapper">
+										<div class="more-menu__icon _icon-chevron-down"></div>
+									</div>
+									<div class="more-menu__title-text">Ещё</div>
+								</summary>
+								<div class="more-menu__body">
+									<ul class="more-menu__list">
+										<li class="more-menu__item">
+											<a class="more-menu__link" href="#">Some text</a>
+										</li>
+										<li class="more-menu__item">
+											<a class="more-menu__link" href="#">Some text</a>
+										</li>
+										<li class="more-menu__item">
+											<a class="more-menu__link" href="#">Some text</a>
+										</li>
+									</ul>
+								</div>
+							</details>
+						</div>
+						<div class="body-header__phone phone-header">
+							<a class="phone-header__icon-wrapper" href="tel:89376444446">
+								<div class="phone-header__icon _icon-phone"></div>
+							</a>
+							<div class="phone-header__body">
+								<a href="tel:89376444446" class="phone-header__phone">8 (937) 6-44444-6</a>
+								<a class="phone-header__link" href="#" data-popup="#phone-request-popup">Заказать звонок</a>
+							</div>
+						</div>
+						<a class="body-header__login login-header" href="#" data-popup="#login-control-panel-popup">
+							<div class="login-header__icon-wrapper">
+								<div class="login-header__icon _icon-log-in"></div>
+							</div>
+							<div class="login-header__text">Войти</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="header__bottom bottom-header">
+				<div class="bottom-header__container">
+					<div class="bottom-header__body">
+						<a class="bottom-header__item" href="#">
+							<div class="bottom-header__icon-wrapper">
+								<div class="bottom-header__icon _icon-web"></div>
+							</div>
+							<div class="bottom-header__text">Управление бизнесом</div>
+						</a>
+						<a class="bottom-header__item" href="#">
+							<div class="bottom-header__icon-wrapper">
+								<div class="bottom-header__icon _icon-box"></div>
+							</div>
+							<div class="bottom-header__text">Продажи маркетплейс</div>
+						</a>
+						<a class="bottom-header__item" href="#">
+							<div class="bottom-header__icon-wrapper">
+								<div class="bottom-header__icon _icon-statistic"></div>
+							</div>
+							<div class="bottom-header__text">Контроль продаж</div>
+						</a>
+						<a class="bottom-header__item" href="#">
+							<div class="bottom-header__icon-wrapper">
+								<div class="bottom-header__icon _icon-calculator"></div>
+							</div>
+							<div class="bottom-header__text">Рассчитать стоимость</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<main class="page">
+			<section class="page__login login">
+				<div class="login__container">
+					<div class="login__body">
+						<h6 class="login__title sub-title-font">Войти в панель управления</h6>
+						<form class="login__form" action="#">
+							<input class="login__input input" type="text" placeholder="Введите логин" />
+							<div class="login__password input-password">
+								<input class="login__input" type="password" placeholder="Введите пароль" />
+								<button class="login__view-password input__viewpass _icon-eye" type="button"></button>
+							</div>
+							<button class="login__button button" type="submit">Войти</button>
+						</form>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__main main-footer">
+				<div class="main-footer__container">
+					<div class="main-footer__body">
+						<div class="main-footer__row">
+							<a class="main-footer__logo-wrapper" href="#">
+								<img src="img/logo-footer.svg" alt="logo-img" />
+							</a>
+							<nav class="main-footer__menu footer-menu">
+								<ul class="footer-menu__list">
+									<li class="footer-menu__item">
+										<a class="footer-menu__link text-font" href="#">Управление бизнесом</a>
+									</li>
+									<li class="footer-menu__item">
+										<a class="footer-menu__link text-font" href="#">Продажи маркетплейс</a>
+									</li>
+									<li class="footer-menu__item">
+										<a class="footer-menu__link text-font" href="#">Контроль продаж</a>
+									</li>
+									<li class="footer-menu__item">
+										<a class="footer-menu__link text-font" href="#">Контакты</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+						<div class="main-footer__feedback feedback-footer">
+							<a class="feedback-footer__phone" href="tel:89376444446">8 (937) 6-44444-6</a>
+							<div class="feedback-footer__social social-footer">
+								<a class="social-footer__icon-wrapper" href="#">
+									<div class="social-footer__icon _icon-vk"></div>
+								</a>
+								<a class="social-footer__icon-wrapper" href="#">
+									<div class="social-footer__icon _icon-youtube"></div>
+								</a>
+								<a class="social-footer__icon-wrapper" href="#">
+									<div class="social-footer__icon _icon-viber"></div>
+								</a>
+								<a class="social-footer__icon-wrapper" href="#">
+									<div class="social-footer__icon _icon-whatsapp"></div>
+								</a>
+								<a class="social-footer__icon-wrapper" href="#">
+									<div class="social-footer__icon _icon-telegram"></div>
+								</a>
+								<a class="social-footer__icon-wrapper" href="#">
+									<div class="social-footer__icon _icon-gmail"></div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer__bottom bottom-footer">
+				<div class="bottom-footer__container">
+					<div class="bottom-footer__body">
+						<a class="bottom-footer__link" href="#">© 2023 Компания TalAnt</a>
+						<a class="bottom-footer__link bottom-footer__link_underline" href="#">Политика конфиденциальности</a>
+						<a class="bottom-footer__link bottom-footer__link_icon _icon-ruso" href="#">Сделано в</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+	<div id="phone-request-popup" aria-hidden="true" class="phone-request-popup popup">
+		<div class="phone-request-popup__wrapper popup__wrapper">
+			<div class="popup__content">
+				<div class="phone-request-popup__content">
+					<button data-close type="button" class="phone-request-popup__close popup__close _icon-xmark-bold"></button>
+					<div class="phone-request-popup__body popup__body">
+						<div class="phone-request-popup__title popup-title-font">Заказать звонок</div>
+						<div class="phone-request-popup__text text-font">
+							Укажите ваши актуальные данные, мы свяжемся с вами в течении 15 минут
+						</div>
+						<form class="phone-request-popup__form" action="#">
+							<input class="phone-request-popup__input input" type="text" placeholder="Ваше имя" />
+							<input class="phone-request-popupinput input _input-phone-mask" type="tel" />
+							<input class="phone-request-popup__input input" type="email" placeholder="Ваш E-mail" />
+							<button class="phone-request-popup__button button" type="submit">Оставить заявку</button>
+						</form>
+						<div class="phone-request-popup__private">
+							Нажимая «Ответить на вопросы», я даю согласие на <a href="#">обработку персональных данных</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="thanks-popup" aria-hidden="true" class="thanks-popup popup">
+		<div class="thanks-popup__wrapper popup__wrapper">
+			<div class="popup__content">
+				<div class="thanks-popup__content">
+					<button data-close type="button" class="thanks-popup__close popup__close _icon-xmark-bold"></button>
+					<div class="thanks-popup__body popup__body">
+						<div class="thanks-popup__image-wrapper">
+							<img src="img/sended.svg" alt="img" />
+						</div>
+						<div class="thanks-popup__title popup-title-font">Спасибо, Ваша заявка отправлена!</div>
+						<div class="thanks-popup__text thanks-popup__text_bold text-font">Долго ждать?</div>
+						<div class="thanks-popup__text text-font">Наберите прямо сейчас:</div>
+						<a class="thanks-popup__tel popup-title-font" href="tel:89376444446">8 (937) 6-44444-6</a>
+						<div class="thanks-popup__text text-font">Или добавляйте в мессенджер:</div>
+						<div class="thanks-popup__social">
+							<a class="thanks-popup__social-item _icon-vk" href="#"></a>
+							<a class="thanks-popup__social-item _icon-youtube" href="#"></a>
+							<a class="thanks-popup__social-item _icon-viber" href="#"></a>
+							<a class="thanks-popup__social-item _icon-whatsapp" href="#"></a>
+							<a class="thanks-popup__social-item _icon-telegram" href="#"></a>
+							<a class="thanks-popup__social-item _icon-gmail" href="#"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="login-control-panel-popup" aria-hidden="true" class="login-control-panel-popup popup">
+		<div class="login-control-panel-popup__wrapper popup__wrapper">
+			<div class="popup__content">
+				<div class="login-control-panel-popup__content">
+					<button data-close type="button" class="login-control-panel-popup__close popup__close _icon-xmark-bold"></button>
+					<div class="login-control-panel-popup__body popup__body">
+						<div class="login-control-panel-popup__title">Войти в панель управления</div>
+						<form class="login-control-panel-popup__form login-control-panel-popup__form" action="#">
+							<input class="login-control-panel-popup__input input" type="text" placeholder="Введите логин" />
+							<div class="login-control-panel-popup__password input-password">
+								<input class="login-control-panel-popup__input" type="password" placeholder="Введите пароль" />
+								<button class="login-control-panel-popup__view-password input__viewpass _icon-eye" type="button"></button>
+							</div>
+							<button class="login-control-panel-popup__button button" type="submit">Войти</button>
+						</form>
+						<div class="login-control-panel-popup__link text-font">Перейти на <a href="login.html">страницу входа</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="js/app.min.js?_v=20230710191613"></script>
+
+</body>
+
+</html>
