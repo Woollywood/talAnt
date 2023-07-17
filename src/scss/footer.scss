@@ -46,9 +46,11 @@
 	}
 
 	&__logo-wrapper {
-		display: none;
+		@media (max-width: em(1024.98)) {
+			display: none;
+		}
 
-		@media (min-width: $tablet) {
+		@media (min-width: em(1024.98)) {
 			width: rem(120);
 
 			display: flex;
@@ -75,11 +77,11 @@
 		@include adaptiveValue('column-gap', 40, 16, 0, 1328, 375);
 		row-gap: rem(10);
 
-		@media (min-width: $tablet) {
+		@media (min-width: em(1024.98)) {
 			grid-auto-flow: column;
 		}
 
-		@media (max-width: $tablet) {
+		@media (max-width: em(1024.98)) {
 			grid-template-columns: repeat(2, 1fr);
 		}
 
@@ -106,6 +108,12 @@
 
 	&__link {
 		font-weight: 600;
+
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 	}
 }
 
@@ -119,6 +127,12 @@
 
 		&:not(:last-child) {
 			margin-bottom: rem(15);
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 	}
 
@@ -139,9 +153,28 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+
+		transition: all 0.3s ease;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: $main-color;
+
+				.social-footer__icon {
+					&::before {
+						color: $bg-color;
+					}
+				}
+			}
+		}
 	}
 
 	&__icon {
+		&::before {
+			font-size: rem(24);
+			color: $main-color;
+
+			transition: all 0.3s ease;
+		}
 	}
 }
 
@@ -180,6 +213,28 @@
 			align-items: center;
 			gap: rem(10);
 			flex-direction: row-reverse;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		&_hover-reset {
+			@media (any-hover: hover) {
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+
+	&__link-private {
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: none;
+			}
 		}
 	}
 }

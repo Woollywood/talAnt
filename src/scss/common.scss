@@ -8,6 +8,7 @@
 		padding: rem(16) rem(32);
 	}
 	border-radius: rem(4);
+	height: rem(58);
 	background-color: $main-color;
 
 	@include adaptiveValue('font-size', 16, 14, 0, 768, 375);
@@ -23,45 +24,117 @@
 	}
 }
 
-.input {
-	display: inline-block;
+.input-wrapper {
+	position: relative;
+
+	display: inline-flex;
+	flex-direction: column;
 	padding: rem(16) rem(24);
 	border-radius: rem(4);
 	background-color: $bg-color;
+	border: rem(1) solid $bg-color;
 
-	color: $txt-3-color;
-	font-size: rem(16);
-	line-height: 160%;
+	height: rem(58);
 
-	&._input-phone-mask {
-		letter-spacing: rem(2);
+	transition: all 0.3s ease;
+	@media (any-hover: hover) {
+		&:hover {
+			border: rem(1) solid #a1aab2;
+		}
+	}
+
+	&._form-focus {
+		border: rem(1) solid #a1aab2;
+	}
+
+	&._form-error {
+		border: rem(1) solid $main-color;
+		margin-bottom: rem(13);
+
+		@media (max-width: em(1086)) and (min-width: em(1024)) {
+			margin-bottom: rem(36);
+
+			.input-error {
+				white-space: normal;
+				max-width: rem(200);
+			}
+		}
+
+		@media (max-width: em(836)) and (min-width: em(768)) {
+			margin-bottom: rem(36);
+
+			.input-error {
+				white-space: normal;
+				max-width: rem(200);
+			}
+		}
 	}
 }
 
-.input-password {
-	display: inline-block;
-	gap: rem(16);
-	align-items: center;
-	justify-content: space-between;
-	padding: rem(16) rem(24);
-	border-radius: rem(4);
-	background-color: $white-color;
+.input {
+	height: 100%;
+	width: 100%;
+	background-color: transparent;
+
+	.input-wrapper_password & {
+		width: 90%;
+	}
 
 	color: $txt-3-color;
 	font-size: rem(16);
+	font-weight: 500;
 	line-height: 160%;
 
-	&._input-phone-mask {
-		letter-spacing: rem(2);
+	&._form-focus {
+		color: $black-color;
+	}
+}
+
+.input-viewpass {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: rem(24);
+
+	&::before {
+		transition: all 0.3s ease;
+		font-size: rem(14);
 	}
 
-	input {
-		width: 100%;
+	@media (any-hover: hover) {
+		&:hover {
+			&::before {
+				color: $main-color;
+			}
+		}
 	}
+}
+
+.input-error {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	white-space: nowrap;
+
+	width: 100%;
+	text-align: right;
+
+	display: none;
+	._form-error & {
+		display: block;
+	}
+
+	font-size: rem(11);
+	font-weight: 600;
+	line-height: 160%;
+	color: $main-color;
+
+	text-align: right;
 }
 
 .preview-icon {
 	position: absolute;
+	z-index: 10;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -82,6 +155,8 @@
 			height: rem(60);
 			border-radius: 50%;
 			background-color: $main-color;
+
+			transition: all 0.3s ease;
 		}
 
 		&::after {
@@ -107,15 +182,29 @@
 			top: 0;
 			left: 0;
 			transform: translate(-50%, -50%);
+
+			&::before {
+				font-size: rem(20);
+			}
+		}
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			.preview-icon__icon-wrapper::before {
+				background-color: #b22323;
+			}
 		}
 	}
 }
 
 .title-font {
-	@include adaptiveValue('font-size', 36, 28, 0, 768, 375);
+	@media (min-width: $mobile) {
+		@include adaptiveValue('font-size', 48, 36, 0, $maxWidthContainer, 1024);
+	}
 
-	@media (min-width: $tablet) {
-		@include adaptiveValue('font-size', 48, 36, 0, 1328, 1024);
+	@media (max-width: $mobile) {
+		font-size: rem(28);
 	}
 
 	font-weight: 600;
@@ -128,7 +217,7 @@
 }
 
 .sub-title-font {
-	@include adaptiveValue("font-size", 20, 16, 0, 768, 375);
+	@include adaptiveValue('font-size', 20, 16, 0, 768, 375);
 	font-weight: 600;
 	line-height: 150%;
 }
@@ -147,7 +236,6 @@
 	@media (any-hover: hover) {
 		&:hover {
 			background-color: rgba(255, 255, 255, 0.6);
-			transform: scale(1.1);
 		}
 	}
 }
@@ -166,6 +254,14 @@
 
 .form-feedback {
 	background-color: $bg-color;
+
+	&_1 {
+		.form-feedback__background-ibg {
+			@media (min-width: $tablet) {
+				left: rem(30);
+			}
+		}
+	}
 
 	&_pb {
 		@media (max-width: $tablet) {
@@ -210,6 +306,8 @@
 			color: $white-color;
 		}
 
+		max-width: rem(666);
+
 		&:not(:last-child) {
 			margin-bottom: rem(10);
 		}
@@ -240,13 +338,16 @@
 
 	&__inputs {
 		min-width: 0;
-		flex-shrink: 1;
 
 		display: flex;
 		@media (max-width: $mobile) {
 			flex-wrap: wrap;
 		}
 		gap: rem(16);
+
+		> * {
+			flex: 1 1 auto;
+		}
 	}
 
 	&__input {
@@ -270,8 +371,18 @@
 		font-size: rem(13);
 		line-height: 160%;
 
+		@media (max-width: $mobileSmall) {
+			font-size: rem(12);
+		}
+
 		a {
 			text-decoration: underline;
+
+			@media (any-hover: hover) {
+				&:hover {
+					text-decoration: none;
+				}
+			}
 		}
 
 		&_grey {
@@ -286,6 +397,10 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
+
+		img {
+			object-position: left;
+		}
 	}
 }
 
@@ -297,13 +412,55 @@
 
 // <br>, который отключается на мобильных экранах
 .br-mobile {
-	@media (max-width: $mobile) {
+	@media (max-width: em(768)) {
 		display: none;
 	}
 }
 
 .br-tablet {
-	@media (max-width: $tablet) {
+	@media (max-width: em(1024)) {
 		display: none;
 	}
+}
+
+.br-low {
+	@media (max-width: $mobileSmall) {
+		display: none;
+	}
+}
+
+.padding-top {
+	@media (max-width: $tablet) {
+		@include adaptiveValue('padding-top', 100, 80, 0, 1024, 768);
+	}
+
+	@media (min-width: $tablet) {
+		@include adaptiveValue('padding-top', 120, 100, 0, 1328, 1024);
+	}
+}
+
+.padding-bottom {
+	@media (max-width: $tablet) {
+		@include adaptiveValue('padding-bottom', 100, 80, 0, 1024, 768);
+	}
+
+	@media (min-width: $tablet) {
+		@include adaptiveValue('padding-bottom', 120, 100, 0, 1328, 1024);
+	}
+}
+
+.padding-bottom-reset {
+	padding-bottom: 0 !important;
+}
+
+.border-top {
+	border-top: rem(1) solid #e4e7eb;
+}
+
+.border-bottom {
+	border-bottom: rem(1) solid #e4e7eb;
+}
+
+.slider-proccesses__arrows .slider-arrow {
+	display: unset !important;
 }

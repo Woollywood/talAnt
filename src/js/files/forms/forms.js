@@ -133,6 +133,19 @@ export let formValidate = {
 	},
 	formClean(form) {
 		form.reset();
+
+		setTimeout(() => {
+			let maskInput = form.querySelector('._input-phone-mask');
+			if (maskInput) {
+				let maskOptions = {
+					mask: '+7(000)000-00-00',
+					lazy: false,
+				};
+				let mask = new IMask(maskInput, maskOptions);
+				mask.updateValue();
+			}
+		}, 20);
+
 		setTimeout(() => {
 			let inputs = form.querySelectorAll('input,textarea');
 			for (let index = 0; index < inputs.length; index++) {
@@ -186,8 +199,13 @@ export function formSubmit() {
 				// Если режим ajax
 				e.preventDefault();
 				const formAction = form.getAttribute('action') ? form.getAttribute('action').trim() : '#';
-				const formMethod = form.getAttribute('method') ? form.getAttribute('method').trim() : 'GET';
+				const formMethod = form.getAttribute('method') ? form.getAttribute('method').trim() : 'POST';
 				const formData = new FormData(form);
+
+				if (form.dataset.ajax === 'feedback') {
+					formData.append('url', window.location.href);
+					formData.append('theme', form.dataset.formTheme);
+				}
 
 				form.classList.add('_sending');
 				const response = await fetch(formAction, {
@@ -195,9 +213,18 @@ export function formSubmit() {
 					body: formData,
 				});
 				if (response.ok) {
-					let responseResult = await response.json();
-					form.classList.remove('_sending');
-					formSent(form, responseResult);
+					try {
+						let responseResult = await response.json();
+						form.classList.remove('_sending');
+						formSent(form, responseResult);
+
+						if (form.dataset.ajax === 'feedback') {
+							flsModules.popup.open('#thanks-popup');
+						}
+					} catch (err) {
+						console.log('Ошибка обработки json файла');
+						console.log(response);
+					}
 				} else {
 					alert('Ошибка');
 					form.classList.remove('_sending');

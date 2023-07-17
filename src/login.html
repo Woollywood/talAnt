@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-	@@include('html/_head.htm',{ "title":"HomePage" })
+	@@include('html/_head.htm',{ "title":"Вход" })
 	<body>
-		<div class="wrapper wrapper_fullpage">
-			@@include('html/_header.htm',{})
+		<div class="wrapper">
+			@@include('html/_header-general.htm',{})
 			<main class="page">
 				<section class="page__login login">
 					<div class="login__container">
 						<div class="login__body">
 							<h6 class="login__title sub-title-font">Войти в панель управления</h6>
 							<form class="login__form" action="#">
-								<input class="login__input input" type="text" placeholder="Введите логин" />
-								<div class="login__password input-password">
+								<div class="login__input input-wrapper">
 									<input
-										class="login__input"
+										class="login-control-panel-popup__input input"
+										type="text"
+										placeholder="Введите логин"
+										data-required />
+									<div class="input-error">* Это поле обязательно к заполнению</div>
+								</div>
+								<div class="login__input input-wrapper input-wrapper_password">
+									<input
+										class="login-control-panel-popup__input input"
 										type="password"
-										placeholder="Введите пароль" />
-									<button class="login__view-password input__viewpass _icon-eye" type="button"></button>
+										placeholder="Введите пароль"
+										data-required />
+									<div class="input-error">* Это поле обязательно к заполнению</div>
+									<button
+										class="input-viewpass input-viewpass__viewpass _icon-eye"
+										type="button"></button>
 								</div>
 								<button class="login__button button" type="submit">Войти</button>
 							</form>
@@ -26,10 +37,7 @@
 			</main>
 			@@include('html/_footer.htm',{})
 		</div>
-		@@include('html/_phone-request-popup.htm',{})
-		@@include('html/_thanks-popup.html',{})
-		@@include('html/_login-control-panel-popup.html',{})
-
-		@@include('html/_js.htm',{})
+		@@include('html/_phone-request-popup.htm',{}) @@include('html/_thanks-popup.html',{})
+		@@include('html/_login-control-panel-popup.html',{}) @@include('html/_js.htm',{})
 	</body>
 </html>

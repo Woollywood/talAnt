@@ -296,9 +296,65 @@ function initSliders() {
 				768: {
 					slidesPerView: 2,
 				},
-				1024: {
+				1300: {
 					slidesPerView: 3,
 				},
+			},
+			// События
+			on: {},
+		});
+	}
+
+	if (document.querySelector('.experience__slider')) {
+		// Указываем класс нужного слайдера
+		// Создаем слайдер
+		new Swiper('.experience__slider', {
+			// Указываем класс нужного слайдера
+			// Подключаем модули слайдера
+			// для конкретного случая
+			modules: [Navigation],
+			observer: true,
+			observeParents: true,
+			// autoHeight: true,
+			slidesPerView: 1,
+			spaceBetween: 16,
+			speed: 800,
+
+			//touchRatio: 0,
+			//simulateTouch: false,
+			//loop: true,
+			//preloadImages: false,
+			// lazy: true,
+
+			/*
+			// Эффекты
+			effect: 'fade',
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+			*/
+
+			// Пагинация
+			/*
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+			*/
+
+			// Полоса прокрутки
+			/*
+			scrollbar: {
+				el: '.swiper-scrollbar',
+				draggable: true,
+			},
+			*/
+
+			// Кнопки "влево/вправо"
+			navigation: {
+				prevEl: '.experience__slider .arrow-prev',
+				nextEl: '.experience__slider .arrow-next',
 			},
 			// События
 			on: {},

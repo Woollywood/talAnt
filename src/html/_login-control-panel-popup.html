@@ -9,14 +9,28 @@
 				<div class="login-control-panel-popup__body popup__body">
 					<div class="login-control-panel-popup__title">Войти в панель управления</div>
 					<form class="login-control-panel-popup__form login-control-panel-popup__form" action="#">
-						<input class="login-control-panel-popup__input input" type="text" placeholder="Введите логин" />
-						<div class="login-control-panel-popup__password input-password">
-							<input class="login-control-panel-popup__input" type="password" placeholder="Введите пароль" />
-							<button class="login-control-panel-popup__view-password input__viewpass _icon-eye" type="button"></button>
+						<div class="input-wrapper">
+							<input
+								class="login-control-panel-popup__input input"
+								type="text"
+								placeholder="Введите логин"
+								data-required />
+							<div class="input-error">* Это поле обязательно к заполнению</div>
+						</div>
+						<div class="input-wrapper input-wrapper_password">
+							<input
+								class="login-control-panel-popup__input input"
+								type="password"
+								placeholder="Введите пароль"
+								data-required />
+							<div class="input-error">* Это поле обязательно к заполнению</div>
+							<button class="input-viewpass input-viewpass__viewpass _icon-eye" type="button"></button>
 						</div>
 						<button class="login-control-panel-popup__button button" type="submit">Войти</button>
 					</form>
-					<div class="login-control-panel-popup__link text-font">Перейти на <a href="login.html">страницу входа</a></div>
+					<div class="login-control-panel-popup__link text-font">
+						Перейти на <a href="login.html">страницу входа</a>
+					</div>
 				</div>
 			</div>
 		</div>

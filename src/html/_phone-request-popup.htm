@@ -11,14 +11,40 @@
 					<div class="phone-request-popup__text text-font">
 						Укажите ваши актуальные данные, мы свяжемся с вами в течении 15 минут
 					</div>
-					<form class="phone-request-popup__form" action="#">
-						<input class="phone-request-popup__input input" type="text" placeholder="Ваше имя" />
-						<input class="phone-request-popupinput input _input-phone-mask" type="tel" />
-						<input class="phone-request-popup__input input" type="email" placeholder="Ваш E-mail" />
+					<form class="phone-request-popup__form" action="wdh_send_form.php" method="POST" data-ajax="feedback" data-form-theme="Заказ звонка">
+						<div class="input-wrapper">
+							<input
+								class="phone-request-popup__input input"
+								type="text"
+								name="name"
+								placeholder="Ваше имя"
+								data-required />
+							<div class="input-error">* Это поле обязательно к заполнению</div>
+						</div>
+
+						<div class="input-wrapper">
+							<input
+								class="phone-request-popupinput input _input-phone-mask"
+								name="tel"
+								type="tel"
+								data-required />
+							<div class="input-error">* Это поле обязательно к заполнению</div>
+						</div>
+
+						<div class="input-wrapper">
+							<input
+								class="phone-request-popup__input input"
+								type="email"
+								placeholder="Ваш E-mail"
+								name="email"
+								data-required />
+							<div class="input-error">* Это поле обязательно к заполнению</div>
+						</div>
+
 						<button class="phone-request-popup__button button" type="submit">Оставить заявку</button>
 					</form>
 					<div class="phone-request-popup__private">
-						Нажимая «Ответить на вопросы», я даю согласие на <a href="#">обработку персональных данных</a>
+						Нажимая «Ответить на вопросы», я даю согласие на <a href="private-policy.html">обработку персональных данных</a>
 					</div>
 				</div>
 			</div>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-	@@include('html/_head.htm',{ "title":"HomePage" })
+	@@include('html/_head.htm',{ "title":"Политика конфиденциальности" })
 	<body>
 		<div class="wrapper">
-			@@include('html/_header.htm',{})
+			@@include('html/_header-general.htm',{})
 			<main class="page">
 				<section class="page__private-policy private-policy">
 					<div class="private-policy__container">
@@ -64,6 +64,20 @@
 						</div>
 					</div>
 				</section>
+
+				<!-- Cookie -->
+				<div class="cookie-agreement">
+					<div class="cookie-agreement__container">
+						<div class="cookie-agreement__body">
+							<div class="cookie-agreement__text text-font">
+								Этот сайт использует файлы cookie для хранения данных. Продолжая использовать сайт, вы
+								даёте своё согласие на работу с этими файлами. Для получения дополнительной информации,
+								пожалуйста, ознакомьтесь с нашей Политикой обработки персональных данных.
+							</div>
+							<a class="cookie-agreement__button button" href="#">Принять условия</a>
+						</div>
+					</div>
+				</div>
 			</main>
 			@@include('html/_footer.htm',{})
 		</div>

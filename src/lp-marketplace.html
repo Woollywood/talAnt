@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-	@@include('html/_head.htm',{ "title":"HomePage" })
+	@@include('html/_head.htm',{ "title":"Маркетплейс (LP)" })
 	<body>
 		<div class="wrapper">
-			@@include('html/_header.htm',{})
+			@@include('html/_header-lp.htm',{})
 			<main class="page">
 				<section class="page__main-block main-block">
 					<div class="main-block__container">
 						<div class="main-block__body">
 							<div class="main-block__content">
-								<h1 class="main-block__title">Занимайтесь бизнесом —рутиной займется TalAnt</h1>
-								<div class="main-block__text">
+								<h1 class="main-block__title">Занимайтесь бизнесом — рутиной займется TalAnt</h1>
+								<div class="main-block__text main-block__text_max-width">
 									Открывайте и продвигайте свои товары на 3 крупнейших маркетплейсах — управляйте
-									<br class="br-mobile" />
 									магазинами централизовано, в несколько кликов
 								</div>
 								<div class="main-block__advantages advantages-main">
@@ -47,12 +46,15 @@
 							</div>
 							<div class="main-block__media-background" data-da=".main-block__content, 767.98, 2">
 								<div class="main-block__image-ibg">
-									<img class="_lazy" data-src="@img/main-block/notebook.png" alt="image" />
+									<img
+										class="_lazy"
+										data-srcset="@img/main-block/notebook@1x.png, @img/main-block/notebook@2x.png 2x, @img/main-block/notebook@3x.png 3x"
+										alt="image" />
 								</div>
 							</div>
 							<a
 								class="main-block__video-link link-main"
-								href="#"
+								href="files/dummy.mp4"
 								data-fancybox
 								data-caption="Test caption"
 								data-da=".main-block__image-ibg, 767.98">
@@ -67,10 +69,13 @@
 						</div>
 					</div>
 					<div class="main-block__background-ibg">
-						<img class="_lazy" data-src="@img/main-block/background-02.jpg" alt="background-img" />
+						<img
+							class="_lazy"
+							data-srcset="@img/main-block/background-02@1x.jpg, @img/main-block/background-02@2x.jpg 2x, @img/main-block/background-02@3x.jpg 3x"
+							alt="background-img" />
 					</div>
 				</section>
-				<section class="page__proccesses proccesses">
+				<section class="page__proccesses proccesses" id="section-1">
 					<div class="proccesses__container">
 						<div class="proccesses__body proccesses__body_pt">
 							<div class="proccesses__text-wrapper">
@@ -90,29 +95,38 @@
 								<div class="slider-proccesses__body slider-proccesses__swiper">
 									<div class="slider-proccesses__slide">
 										<div class="slider-proccesses__image-ibg">
-											<img class="_lazy" data-src="@img/proccesses/01.jpg" alt="image-preview" />
+											<img
+												class="_lazy"
+												data-srcset="@img/proccesses/01@1x.jpg, @img/proccesses/01@2x.jpg 2x, @img/proccesses/01@3x.jpg 3x"
+												alt="image-preview" />
 										</div>
 										<h6 class="slider-proccesses__title">Подключение</h6>
-										<div class="slider-proccesses__text">
+										<div class="slider-proccesses__text text-font">
 											Специалисты переносят ваши данные в систему и настраивают доступ.
 										</div>
 									</div>
 									<div class="slider-proccesses__slide">
 										<div class="slider-proccesses__image-ibg">
-											<img class="_lazy" data-src="@img/proccesses/02.jpg" alt="image-preview" />
+											<img
+												class="_lazy"
+												data-srcset="@img/proccesses/02@1x.jpg, @img/proccesses/02@2x.jpg 2x, @img/proccesses/02@3x.jpg 3x"
+												alt="image-preview" />
 										</div>
 										<h6 class="slider-proccesses__title">Тестирование</h6>
-										<div class="slider-proccesses__text">
+										<div class="slider-proccesses__text text-font">
 											Разработчики проверяют работоспособность модулей перед стартом
 											использования.
 										</div>
 									</div>
 									<div class="slider-proccesses__slide">
 										<div class="slider-proccesses__image-ibg">
-											<img class="_lazy" data-src="@img/proccesses/03.jpg" alt="image-preview" />
+											<img
+												class="_lazy"
+												data-srcset="@img/proccesses/03@1x.jpg, @img/proccesses/03@2x.jpg 2x, @img/proccesses/03@3x.jpg 3x"
+												alt="image-preview" />
 										</div>
 										<h6 class="slider-proccesses__title">Обучение</h6>
-										<div class="slider-proccesses__text">
+										<div class="slider-proccesses__text text-font">
 											Ваши сотрудники в течение5дней проходят мини-курс по работе в системе с
 											подробными инструкциями и чек-листами.
 										</div>
@@ -139,7 +153,7 @@
 						</div>
 					</div>
 				</section>
-				<section class="page__competitors competitors">
+				<section class="page__competitors competitors border-bottom" id="section-2">
 					<div class="competitors__container">
 						<div class="competitors__body">
 							<div class="competitors__text-wrapper">
@@ -195,7 +209,7 @@
 						</div>
 					</div>
 				</section>
-				<section class="page__how-it-works how-it-works how-it-works_second">
+				<section class="page__how-it-works how-it-works how-it-works_second padding-top" id="section-3">
 					<div class="how-it-works__container">
 						<div class="how-it-works__body">
 							<div class="how-it-works__content">
@@ -211,7 +225,10 @@
 								<a class="how-it-works__button button" href="#">Узнать подробнее</a>
 							</div>
 							<div class="how-it-works__media">
-								<img class="_lazy" data-src="@img/how-it-works/image.jpg" alt="image" />
+								<img
+									class="_lazy"
+									data-srcset="@img/how-it-works/image@1x.jpg, @img/how-it-works/image@2x.jpg 2x, @img/how-it-works/image@3x.jpg 3x"
+									alt="image" />
 							</div>
 						</div>
 					</div>
@@ -220,7 +237,10 @@
 					<div class="how-it-works__container">
 						<div class="how-it-works__body">
 							<div class="how-it-works__media">
-								<img class="_lazy" data-src="@img/how-it-works/image.jpg" alt="image" />
+								<img
+									class="_lazy"
+									data-srcset="@img/how-it-works/image@1x.jpg, @img/how-it-works/image@2x.jpg 2x, @img/how-it-works/image@3x.jpg 3x"
+									alt="image" />
 							</div>
 							<div class="how-it-works__content">
 								<h2 class="how-it-works__title title-font">
@@ -253,12 +273,15 @@
 								</div>
 							</div>
 							<div class="how-it-works__media">
-								<img class="_lazy" data-src="@img/how-it-works/image.jpg" alt="image" />
+								<img
+									class="_lazy"
+									data-srcset="@img/how-it-works/image@1x.jpg, @img/how-it-works/image@2x.jpg 2x, @img/how-it-works/image@3x.jpg 3x"
+									alt="image" />
 							</div>
 						</div>
 					</div>
 				</section>
-				<section class="page__difference difference">
+				<section class="page__difference difference" id="section-4">
 					<div class="difference__container">
 						<div class="difference__body">
 							<div class="difference__text-wrapper">
@@ -334,50 +357,100 @@
 						</div>
 					</div>
 				</section>
-				<section class="page__form-feedback form-feedback">
+				<section class="page__form-feedback form-feedback form-feedback_3">
 					<div class="form-feedback__container">
 						<div class="form-feedback__body">
 							<div class="form-feedback__inner">
 								<h2 class="form-feedback__title title-font">
-									Повысьте продажи на <br class="br-tablet" />
-									маркетплейсах от 50%
+									Повысьте продажи на маркетплейсах от 50%
 								</h2>
 								<div class="form-feedback__text text-font">Бесплатно научим пользоваться системой</div>
-								<form class="form-feedback__form" action="#">
+								<form
+									class="form-feedback__form"
+									action="wdh_send_form.php"
+									data-ajax="feedback"
+									data-form-theme="Форма обратной связи">
 									<div class="form-feedback__inputs">
-										<input type="text" class="form-feedback__input input" placeholder="Ваше имя" />
-										<input type="tel" class="form-feedback__input input _input-phone-mask" />
-										<input
-											type="email"
-											class="form-feedback__input input"
-											placeholder="Ваш E-mail" />
+										<div class="input-wrapper">
+											<input
+												type="text"
+												class="form-feedback__input input"
+												placeholder="Ваше имя"
+												name="name"
+												data-required />
+											<div class="input-error">* Это поле обязательно к заполнению</div>
+										</div>
+										<div class="input-wrapper">
+											<input
+												type="tel"
+												class="form-feedback__input input _input-phone-mask"
+												name="tel"
+												data-required />
+											<div class="input-error">* Это поле обязательно к заполнению</div>
+										</div>
+										<div class="input-wrapper">
+											<input
+												type="email"
+												class="form-feedback__input input"
+												placeholder="Ваш E-mail"
+												name="email"
+												data-required />
+											<div class="input-error">* Это поле обязательно к заполнению</div>
+										</div>
 									</div>
 									<button class="form-feedback__button button" type="submit">Хочу попробовать</button>
 								</form>
 								<div class="form-feedback__private">
 									Нажимая «Ответить на вопросы», я даю согласие на
-									<a href="#">обработку персональных данных</a>
+									<a href="private-policy.html">обработку персональных данных</a>
 								</div>
 							</div>
 							<div class="form-feedback__background-ibg">
 								<img
 									class="_lazy"
-									data-src="@img/form-feedback/background-05.jpg"
+									data-srcset="@img/form-feedback/background-05@1x.jpg, @img/form-feedback/background-05@2x.jpg 2x, @img/form-feedback/background-05@3x.jpg 3x"
 									alt="background-img" />
 							</div>
 						</div>
 					</div>
 				</section>
-				<section class="page__ourselves ourselves">
+				<section class="page__how-it-works how-it-works padding-top">
+					<div class="how-it-works__container">
+						<div class="how-it-works__body padding-bottom-reset">
+							<div class="how-it-works__content">
+								<h2 class="how-it-works__title title-font">
+									Испытали систему сами и передадим полученный опыт
+								</h2>
+								<div class="how-it-works__text text-font">
+									Бесплатно обучим ваших сотрудников работе с системой: передадим понятные инструкции
+									и дополнительные материалы, проведем несколько личных встреч. За5дней вы полностью
+									разберетесь в функционале и возможностях программы. Если у вас возникнут вопросы уже
+									после обучения—наши сотрудники на связи 24/7 и помогут быстро разобраться в вашем
+									вопросе.
+								</div>
+							</div>
+							<div class="how-it-works__media">
+								<img
+									class="_lazy"
+									data-srcset="@img/how-it-works/image@1x.jpg, @img/how-it-works/image@2x.jpg 2x, @img/how-it-works/image@3x.jpg 3x"
+									alt="image" />
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="page__ourselves ourselves border-bottom padding-top" id="section-5">
 					<div class="ourselves__container">
 						<div class="ourselves__body">
 							<div class="ourselves__top">
 								<div class="ourselves__image-ibg">
-									<img class="_lazy" data-src="@img/ourselves/section-image.jpg" alt="image" />
+									<img
+										class="_lazy"
+										data-srcset="@img/ourselves/section-image@1x.jpg, @img/ourselves/section-image@2x.jpg 2x, @img/ourselves/section-image@3x.jpg 3x"
+										alt="image" />
 								</div>
 								<div class="ourselves__text-wrapper">
 									<h2 class="ourselves__title title-font">
-										Разработали для собственного бизнеса и делимся решением свами
+										Разработали для собственного бизнеса и делимся решением с вами
 									</h2>
 									<div class="ourselves__text text-font">
 										Специалисты TalAnt понимают потребности бизнеса и специфику онлайн-магазинов,
@@ -411,35 +484,50 @@
 								<div class="slider-ourselves__body slider-ourselves__swiper">
 									<div class="slider-ourselves__slide">
 										<div class="slider-ourselves__person-image-ibg">
-											<img class="_lazy" data-src="@img/ourselves/01.jpg" alt="person-image" />
+											<img
+												class="_lazy"
+												data-srcset="@img/ourselves/01@1x.jpg, @img/ourselves/01@2x.jpg 2x, @img/ourselves/01@3x.jpg 3x"
+												alt="person-image" />
 										</div>
 										<div class="slider-ourselves__person-name">Иванов Никита Андреевич</div>
 										<div class="slider-ourselves__person-job">Менеджер продаж</div>
 									</div>
 									<div class="slider-ourselves__slide">
 										<div class="slider-ourselves__person-image-ibg">
-											<img class="_lazy" data-src="@img/ourselves/02.jpg" alt="person-image" />
+											<img
+												class="_lazy"
+												data-srcset="@img/ourselves/02@1x.jpg, @img/ourselves/02@2x.jpg 2x, @img/ourselves/02@3x.jpg 3x"
+												alt="person-image" />
 										</div>
 										<div class="slider-ourselves__person-name">Егоров Олег Егорович</div>
 										<div class="slider-ourselves__person-job">Разработчик</div>
 									</div>
 									<div class="slider-ourselves__slide">
 										<div class="slider-ourselves__person-image-ibg">
-											<img class="_lazy" data-src="@img/ourselves/01.jpg" alt="person-image" />
+											<img
+												class="_lazy"
+												data-srcset="@img/ourselves/01@1x.jpg, @img/ourselves/01@2x.jpg 2x, @img/ourselves/01@3x.jpg 3x"
+												alt="person-image" />
 										</div>
 										<div class="slider-ourselves__person-name">Иванов Никита Андреевич</div>
 										<div class="slider-ourselves__person-job">Менеджер продаж</div>
 									</div>
 									<div class="slider-ourselves__slide">
 										<div class="slider-ourselves__person-image-ibg">
-											<img class="_lazy" data-src="@img/ourselves/02.jpg" alt="person-image" />
+											<img
+												class="_lazy"
+												data-srcset="@img/ourselves/02@1x.jpg, @img/ourselves/02@2x.jpg 2x, @img/ourselves/02@3x.jpg 3x"
+												alt="person-image" />
 										</div>
 										<div class="slider-ourselves__person-name">Егоров Олег Егорович</div>
 										<div class="slider-ourselves__person-job">Разработчик</div>
 									</div>
 									<div class="slider-ourselves__slide">
 										<div class="slider-ourselves__person-image-ibg">
-											<img class="_lazy" data-src="@img/ourselves/01.jpg" alt="person-image" />
+											<img
+												class="_lazy"
+												data-srcset="@img/ourselves/01@1x.jpg, @img/ourselves/01@2x.jpg 2x, @img/ourselves/01@3x.jpg 3x"
+												alt="person-image" />
 										</div>
 										<div class="slider-ourselves__person-name">Иванов Никита Андреевич</div>
 										<div class="slider-ourselves__person-job">Менеджер продаж</div>
@@ -459,47 +547,145 @@
 						</div>
 					</div>
 				</section>
-				<section class="page__experience experience">
+				<section class="page__experience experience padding-top" id="section-6">
 					<div class="experience__container">
 						<div class="experience__body">
 							<h2 class="experience__title title-font">
 								TalAnt в интернет-торговле: опыт <br class="br-mobile" />
 								компаний-клиентов
 							</h2>
-							<div class="experience__content">
-								<div class="experience__image-ibg">
-									<img class="_lazy" data-src="@img/experience/image.jpg" alt="image" />
+							<div class="experience__slider">
+								<div class="experience__slider-body experience__swiper">
+									<div class="experience__slider-slide">
+										<div class="experience__content">
+											<div class="experience__image-ibg">
+												<img
+													class="_lazy"
+													data-srcset="@img/experience/image@1x.jpg, @img/experience/image@2x.jpg 2x, @img/experience/image@3x.jpg 3x"
+													alt="image" />
+											</div>
+											<div class="experience__text-wrapper">
+												<div class="experience__content-title text-font">Заказчик:</div>
+												<div class="experience__content-text text-font">
+													Магазин аромасвечей
+												</div>
+												<div class="experience__content-title text-font">Задача:</div>
+												<div class="experience__content-text text-font">
+													Вывести товары на известные маркетплейсы и продавать онлайн, так как
+													офлайн-точкиприносили мало прибыли.
+												</div>
+												<div class="experience__content-title text-font">
+													Результат после подключенияTalAnt:
+												</div>
+												<ul class="experience__content-list">
+													<li class="experience__content-item text-font _icon-arrow">
+														Уже на второй неделе продажи выросли на 25%.
+													</li>
+													<li class="experience__content-item text-font _icon-arrow">
+														С помощью инструментов аналитики точнее определена целевая
+														аудитория и улучшеноторговое предложение.
+													</li>
+													<li class="experience__content-item text-font _icon-arrow">
+														Через 2 месяца бизнес расширился и появился еще
+														на 2 маркетплейсах.
+													</li>
+												</ul>
+												<a class="experience__content-button button" href="#">Хочу так же</a>
+											</div>
+										</div>
+									</div>
+									<div class="experience__slider-slide">
+										<div class="experience__content">
+											<div class="experience__image-ibg">
+												<img
+													class="_lazy"
+													data-srcset="@img/experience/image@1x.jpg, @img/experience/image@2x.jpg 2x, @img/experience/image@3x.jpg 3x"
+													alt="image" />
+											</div>
+											<div class="experience__text-wrapper">
+												<div class="experience__content-title text-font">Заказчик:</div>
+												<div class="experience__content-text text-font">
+													Магазин аромасвечей
+												</div>
+												<div class="experience__content-title text-font">Задача:</div>
+												<div class="experience__content-text text-font">
+													Вывести товары на известные маркетплейсы и продавать онлайн, так как
+													офлайн-точкиприносили мало прибыли.
+												</div>
+												<div class="experience__content-title text-font">
+													Результат после подключенияTalAnt:
+												</div>
+												<ul class="experience__content-list">
+													<li class="experience__content-item text-font _icon-arrow">
+														Уже на второй неделе продажи выросли на 25%.
+													</li>
+													<li class="experience__content-item text-font _icon-arrow">
+														С помощью инструментов аналитики точнее определена целевая
+														аудитория и улучшеноторговое предложение.
+													</li>
+													<li class="experience__content-item text-font _icon-arrow">
+														Через 2 месяца бизнес расширился и появился еще
+														на 2 маркетплейсах.
+													</li>
+												</ul>
+												<a class="experience__content-button button" href="#">Хочу так же</a>
+											</div>
+										</div>
+									</div>
+									<div class="experience__slider-slide">
+										<div class="experience__content">
+											<div class="experience__image-ibg">
+												<img
+													class="_lazy"
+													data-srcset="@img/experience/image@1x.jpg, @img/experience/image@2x.jpg 2x, @img/experience/image@3x.jpg 3x"
+													alt="image" />
+											</div>
+											<div class="experience__text-wrapper">
+												<div class="experience__content-title text-font">Заказчик:</div>
+												<div class="experience__content-text text-font">
+													Магазин аромасвечей
+												</div>
+												<div class="experience__content-title text-font">Задача:</div>
+												<div class="experience__content-text text-font">
+													Вывести товары на известные маркетплейсы и продавать онлайн, так как
+													офлайн-точкиприносили мало прибыли.
+												</div>
+												<div class="experience__content-title text-font">
+													Результат после подключенияTalAnt:
+												</div>
+												<ul class="experience__content-list">
+													<li class="experience__content-item text-font _icon-arrow">
+														Уже на второй неделе продажи выросли на 25%.
+													</li>
+													<li class="experience__content-item text-font _icon-arrow">
+														С помощью инструментов аналитики точнее определена целевая
+														аудитория и улучшеноторговое предложение.
+													</li>
+													<li class="experience__content-item text-font _icon-arrow">
+														Через 2 месяца бизнес расширился и появился еще
+														на 2 маркетплейсах.
+													</li>
+												</ul>
+												<a class="experience__content-button button" href="#">Хочу так же</a>
+											</div>
+										</div>
+									</div>
 								</div>
-								<div class="experience__text-wrapper">
-									<div class="experience__content-title text-font">Заказчик:</div>
-									<div class="experience__content-text text-font">Магазин аромасвечей</div>
-									<div class="experience__content-title text-font">Задача:</div>
-									<div class="experience__content-text text-font">
-										Вывести товары на известные маркетплейсы и продавать онлайн, так как
-										офлайн-точкиприносили мало прибыли.
+								<div class="slider-proccesses__controlls">
+									<div class="slider-proccesses__arrows">
+										<button
+											class="slider-proccesses__arrow-prev slider-arrow arrow-prev _icon-chevron-down"
+											type="button"></button>
+										<button
+											class="slider-proccesses__arrow-next slider-arrow arrow-next _icon-chevron-down"
+											type="button"></button>
 									</div>
-									<div class="experience__content-title text-font">
-										Результат после подключенияTalAnt:
-									</div>
-									<ul class="experience__content-list">
-										<li class="experience__content-item text-font _icon-arrow">
-											Уже на второй неделе продажи выросли на 25%.
-										</li>
-										<li class="experience__content-item text-font _icon-arrow">
-											С помощью инструментов аналитики точнее определена целевая аудитория и
-											улучшеноторговое предложение.
-										</li>
-										<li class="experience__content-item text-font _icon-arrow">
-											Через 2 месяца бизнес расширился и появился еще на 2 маркетплейсах.
-										</li>
-									</ul>
-									<a class="experience__content-button button" href="#">Хочу так же</a>
 								</div>
 							</div>
 						</div>
 					</div>
 				</section>
-				<section class="page__criteria criteria criteria_pb">
+				<section class="page__criteria criteria padding-bottom" id="section-7">
 					<div class="criteria__container">
 						<div class="criteria__body">
 							<div class="criteria__text-wrapper">
@@ -543,38 +729,61 @@
 						<div class="form-feedback__body">
 							<div class="form-feedback__inner">
 								<h2 class="form-feedback__title form-feedback__title_white title-font">
-									Продавайте на <br class="br-tablet" />
-									маркетплейсах без рисков
+									Продавайте на маркетплейсах без рисков
 								</h2>
 								<div class="form-feedback__text form-feedback__text_white text-font">
 									Подключитесь к системе TalAnt и оптимизируйте бизнес-процессы
 								</div>
-								<form class="form-feedback__form" action="#">
+								<form
+									class="form-feedback__form"
+									action="wdh_send_form.php"
+									data-ajax="feedback"
+									data-form-theme="Форма обратной связи">
 									<div class="form-feedback__inputs">
-										<input type="text" class="form-feedback__input input" placeholder="Ваше имя" />
-										<input type="tel" class="form-feedback__input input _input-phone-mask" />
-										<input
-											type="email"
-											class="form-feedback__input input"
-											placeholder="Ваш E-mail" />
+										<div class="input-wrapper">
+											<input
+												type="text"
+												class="form-feedback__input input"
+												placeholder="Ваше имя"
+												name="name"
+												data-required />
+											<div class="input-error">* Это поле обязательно к заполнению</div>
+										</div>
+										<div class="input-wrapper">
+											<input
+												type="tel"
+												class="form-feedback__input input _input-phone-mask"
+												name="tel"
+												data-required />
+											<div class="input-error">* Это поле обязательно к заполнению</div>
+										</div>
+										<div class="input-wrapper">
+											<input
+												type="email"
+												class="form-feedback__input input"
+												name="email"
+												placeholder="Ваш E-mail"
+												data-required />
+											<div class="input-error">* Это поле обязательно к заполнению</div>
+										</div>
 									</div>
 									<button class="form-feedback__button button" type="submit">Оставить заявку</button>
 								</form>
 								<div class="form-feedback__private form-feedback__private_grey">
 									Нажимая «Ответить на вопросы», я даю согласие на
-									<a href="#">обработку персональных данных</a>
+									<a href="private-policy.html">обработку персональных данных</a>
 								</div>
 							</div>
 							<div class="form-feedback__background-ibg">
 								<img
 									class="_lazy"
-									data-src="@img/form-feedback/background-02.jpg"
+									data-srcset="@img/form-feedback/background-02@1x.jpg, @img/form-feedback/background-02@2x.jpg 2x, @img/form-feedback/background-02@3x.jpg 3x"
 									alt="background-img" />
 							</div>
 						</div>
 					</div>
 				</section>
-				<section class="page__billing billing">
+				<section class="page__billing billing border-bottom" id="section-8">
 					<div class="billing__container">
 						<div class="billing__body">
 							<div class="billing__text-wrapper">
@@ -589,7 +798,10 @@
 							<div class="billing__items">
 								<div class="billing__item">
 									<div class="billing__image-ibg">
-										<img class="_lazy" data-src="@img/billing/01.jpg" alt="image" />
+										<img
+											class="_lazy"
+											data-srcset="@img/billing/01@1x.jpg, @img/billing/01@2x.jpg 2x, @img/billing/01@3x.jpg 3x"
+											alt="image" />
 									</div>
 									<h6 class="billing__item-title">Название тарифов</h6>
 									<div class="billing__item-text text-font">
@@ -600,7 +812,10 @@
 								</div>
 								<div class="billing__item">
 									<div class="billing__image-ibg">
-										<img class="_lazy" data-src="@img/billing/01.jpg" alt="image" />
+										<img
+											class="_lazy"
+											data-srcset="@img/billing/01@1x.jpg, @img/billing/01@2x.jpg 2x, @img/billing/01@3x.jpg 3x"
+											alt="image" />
 									</div>
 									<h6 class="billing__item-title">Название тарифов</h6>
 									<div class="billing__item-text text-font">
@@ -611,7 +826,10 @@
 								</div>
 								<div class="billing__item">
 									<div class="billing__image-ibg">
-										<img class="_lazy" data-src="@img/billing/01.jpg" alt="image" />
+										<img
+											class="_lazy"
+											data-srcset="@img/billing/01@1x.jpg, @img/billing/01@2x.jpg 2x, @img/billing/01@3x.jpg 3x"
+											alt="image" />
 									</div>
 									<h6 class="billing__item-title">Название тарифов</h6>
 									<div class="billing__item-text text-font">
@@ -624,7 +842,7 @@
 						</div>
 					</div>
 				</section>
-				<section class="page__benefit benefit">
+				<section class="page__benefit benefit" id="section-9">
 					<div class="benefit__container">
 						<div class="benefit__body">
 							<h2 class="benefit__title title-font">
@@ -655,7 +873,7 @@
 								<div class="benefit__item item-benefit">
 									<div class="item-benefit__top">
 										<div class="item-benefit__icon item-benefit__icon_red _icon-check-bold"></div>
-										<div class="item-benefit__title">В приложениях маркетплейсов</div>
+										<div class="item-benefit__title">С системой TalAnt</div>
 									</div>
 									<div class="item-benefit__text text-font">
 										Для работы с системой TalAnt не нужно нанимать менеджеров—все процессы доступны
@@ -678,49 +896,83 @@
 						</div>
 					</div>
 				</section>
-				<section class="page__form-feedback form-feedback form-feedback_pb">
+				<section class="page__form-feedback form-feedback padding-bottom">
 					<div class="form-feedback__container">
 						<div class="form-feedback__body">
 							<div class="form-feedback__inner">
 								<h2 class="form-feedback__title form-feedback__title_white title-font">
-									Зарабатывайте на <br class="br-tablet" />
-									маркетплейсах еще больше
+									Зарабатывайте на маркетплейсах еще больше
 								</h2>
 								<div class="form-feedback__text form-feedback__text_white text-font">
 									Подключайтесь и оцените возможности системы TalAnt
 								</div>
-								<form class="form-feedback__form" action="#">
+								<form
+									class="form-feedback__form"
+									action="wdh_send_form.php"
+									data-ajax="feedback"
+									data-form-theme="Форма обратной связи">
 									<div class="form-feedback__inputs">
-										<input type="text" class="form-feedback__input input" placeholder="Ваше имя" />
-										<input type="tel" class="form-feedback__input input _input-phone-mask" />
-										<input
-											type="email"
-											class="form-feedback__input input"
-											placeholder="Ваш E-mail" />
+										<div class="input-wrapper">
+											<input
+												type="text"
+												class="form-feedback__input input"
+												name="name"
+												placeholder="Ваше имя"
+												data-required />
+											<div class="input-error">* Это поле обязательно к заполнению</div>
+										</div>
+										<div class="input-wrapper">
+											<input
+												type="tel"
+												class="form-feedback__input input _input-phone-mask"
+												name="tel"
+												data-required />
+											<div class="input-error">* Это поле обязательно к заполнению</div>
+										</div>
+										<div class="input-wrapper">
+											<input
+												type="email"
+												class="form-feedback__input input"
+												name="email"
+												placeholder="Ваш E-mail"
+												data-required />
+											<div class="input-error">* Это поле обязательно к заполнению</div>
+										</div>
 									</div>
 									<button class="form-feedback__button button" type="submit">Попробовать</button>
 								</form>
 								<div class="form-feedback__private form-feedback__private_grey">
 									Нажимая «Ответить на вопросы», я даю согласие на
-									<a href="#">обработку персональных данных</a>
+									<a href="private-policy.html">обработку персональных данных</a>
 								</div>
 							</div>
 							<div class="form-feedback__background-ibg">
 								<img
 									class="_lazy"
-									data-src="@img/form-feedback/background-06.jpg"
+									data-srcset="@img/form-feedback/background-06@1x.jpg, @img/form-feedback/background-06@2x.jpg 2x, @img/form-feedback/background-06@3x.jpg 3x"
 									alt="background-img" />
 							</div>
 						</div>
 					</div>
 				</section>
+
+				<!-- Cookie -->
+				<div class="cookie-agreement">
+					<div class="cookie-agreement__container">
+						<div class="cookie-agreement__body">
+							<div class="cookie-agreement__text text-font">
+								Этот сайт использует файлы cookie для хранения данных. Продолжая использовать сайт, вы
+								даёте своё согласие на работу с этими файлами. Для получения дополнительной информации,
+								пожалуйста, ознакомьтесь с нашей Политикой обработки персональных данных.
+							</div>
+							<a class="cookie-agreement__button button" href="#">Принять условия</a>
+						</div>
+					</div>
+				</div>
 			</main>
 			@@include('html/_footer.htm',{})
 		</div>
-		@@include('html/_phone-request-popup.htm',{})
-		@@include('html/_thanks-popup.html',{})
-		@@include('html/_login-control-panel-popup.html',{})
-
-		@@include('html/_js.htm',{})
+		@@include('html/_phone-request-popup.htm',{}) @@include('html/_thanks-popup.html',{})
+		@@include('html/_login-control-panel-popup.html',{}) @@include('html/_js.htm',{})
 	</body>
 </html>
