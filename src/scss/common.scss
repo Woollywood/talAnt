@@ -263,6 +263,30 @@
 		}
 	}
 
+	&_3 {
+		.form-feedback__background-ibg {
+			@media (max-width: $mobileSmall) {
+				img {
+					object-position: 60%;
+				}
+			}
+		}
+
+		.form-feedback__private {
+			@media (max-width: $mobileSmall) {
+				color: rgba(#fff, 0.6);
+			}
+
+			@media (min-width: $mobileSmall) {
+				color: $txt-3-color;
+			}
+
+			@media (min-width: $tablet) {
+				color: $txt-2-color;
+			}
+		}
+	}
+
 	&_pb {
 		@media (max-width: $tablet) {
 			@include adaptiveValue('padding-bottom', 100, 80, 0, 1024, 768);

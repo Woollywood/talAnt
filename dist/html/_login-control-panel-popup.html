@@ -1,0 +1,31 @@
+<div id="login-control-panel-popup" aria-hidden="true" class="login-control-panel-popup popup">
+	<div class="login-control-panel-popup__wrapper popup__wrapper">
+		<div class="popup__content">
+			<div class="login-control-panel-popup__content">
+				<button data-close type="button" class="login-control-panel-popup__close popup__close">
+					<svg>
+						<use xlink:href="img/icons/icons.svg#xmark-bold"></use>
+					</svg>
+				</button>
+				<div class="login-control-panel-popup__body popup__body">
+					<div class="login-control-panel-popup__title">Войти в панель управления</div>
+					<form class="login-control-panel-popup__form login-control-panel-popup__form" action="#">
+						<div class="input-wrapper">
+							<input class="login-control-panel-popup__input input" type="text" placeholder="Введите логин" data-required />
+							<div class="input-error">* Это поле обязательно к заполнению</div>
+						</div>
+						<div class="input-wrapper input-wrapper_password">
+							<input class="login-control-panel-popup__input input" type="password" placeholder="Введите пароль" data-required />
+							<div class="input-error">* Это поле обязательно к заполнению</div>
+							<button class="input-viewpass input-viewpass__viewpass _icon-eye" type="button"></button>
+						</div>
+						<button class="login-control-panel-popup__button button" type="submit">Войти</button>
+					</form>
+					<div class="login-control-panel-popup__link text-font">
+						Перейти на <a href="login.html">страницу входа</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,17 +1,30 @@
 <?php
 	$response = array();
 
-	$subject = "Заявка с сайта";
-	$message = "Заказ звонка";
+	$subject = $_POST['theme'];
 
-	$email = $_POST['email'] . "\r\n";
-	$name = $_POST['name'] . "\r\n";
-	$tel = $_POST['tel'] . "\r\n";
+	$email = "";
+	$name = "";
+	$tel = "";
 
-	$additional_headers = "From: talAnt@site.ru\r\n" . "Reply-to: " . $email . "name: " . $name . "phone: " . $tel;
+	if (!empty($_POST['email'])) {
+		$email = "email: " . $_POST['email'] . "\r\n";
+	}
 
-	if(mail($_POST['email'], $subject, $message, $additional_headers)){
-		array_push($response, ['success' => 'true', 'email' => $_POST['email']]);
+	if (!empty($_POST['name'])) {
+		$name = "name: " . $_POST['name'] . "\r\n";
+	}
+
+	if (!empty($_POST['tel'])) {
+		$tel = "tel: " . $_POST['tel'] . "\r\n";
+	}
+
+	$url = "url: " . $_POST['url'] . "\4\n";
+
+	$message = $email . $name . $tel . $url;
+
+	if(mail('talamagin@mail.ru', $subject, $message)){
+		array_push($response, ['success' => 'true']);
 		echo json_encode($response);
 	}
 	else{

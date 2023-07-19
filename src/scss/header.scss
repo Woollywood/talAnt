@@ -463,7 +463,7 @@
 		&::before,
 		&::after {
 			content: '';
-			transition: all 0.5s ease-in-out 0s;
+			transition: all 0.42s ease 0s;
 			left: 50%;
 			transform: translateX(-50%);
 			position: absolute;

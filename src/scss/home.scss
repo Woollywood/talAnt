@@ -1186,6 +1186,7 @@
 
 	&__video {
 		position: relative;
+		display: block;
 
 		img {
 			display: block;
@@ -1374,6 +1375,25 @@
 	&__slider {
 		overflow: visible !important;
 		position: relative;
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			z-index: 5;
+			top: 0;
+			height: 100%;
+			width: 100%;
+			background-color: #f7f7f7;
+		}
+
+		&::before {
+			right: calc(100% + rem(28));
+		}
+
+		&::after {
+			left: calc(100% + rem(28));
+		}
 	}
 
 	&__slider-body {
@@ -3367,6 +3387,18 @@
 		display: flex;
 		gap: rem(20);
 		align-items: center;
+
+		@media (any-hover: hover) {
+			&:hover {
+				.social-contacts__tel-text {
+					text-decoration: underline;
+				}
+
+				.social-contacts__icon {
+					background-color: #b22323;
+				}
+			}
+		}
 	}
 
 	&__icon {
@@ -3385,11 +3417,6 @@
 		}
 
 		transition: all 0.3s ease;
-		@media (any-hover: hover) {
-			&:hover {
-				background-color: #b22323;
-			}
-		}
 	}
 
 	&__tel-text {
@@ -3409,6 +3436,18 @@
 		display: flex;
 		gap: rem(20);
 		align-items: center;
+
+		@media (any-hover: hover) {
+			&:hover {
+				.social-contacts__mail-text {
+					text-decoration: underline;
+				}
+
+				.social-contacts__icon {
+					background-color: #b22323;
+				}
+			}
+		}
 	}
 
 	&__mail-text {

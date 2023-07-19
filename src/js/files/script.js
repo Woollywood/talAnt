@@ -59,6 +59,21 @@ window.addEventListener('resize', (e) => {
 	}
 });
 
+sessionCookiesStart();
+
+async function sessionCookiesStart() {
+	let response = await fetch('session.php');
+	if (response.ok) {
+		let responseJson = await response.json();
+
+		if (responseJson.cookies === true) {
+			document.querySelector('.cookie-agreement').classList.add('_accepted');
+		}
+	} else {
+		throw new Error('connection denied');
+	}
+}
+
 window.addEventListener('load', (e) => {
 	let phoneInputs = document.querySelectorAll('._input-phone-mask');
 	if (phoneInputs.length) {
@@ -78,9 +93,9 @@ window.addEventListener('load', (e) => {
 
 	let passEyeButtons = document.querySelectorAll('[class*="-viewpass"]');
 	if (passEyeButtons) {
-		passEyeButtons.forEach(button => {
+		passEyeButtons.forEach((button) => {
 			button.closest('form').classList.add('_pass-hidden');
-		})
+		});
 	}
 
 	document.addEventListener('click', (el) => {
@@ -94,6 +109,12 @@ window.addEventListener('load', (e) => {
 
 		if (targetElement.closest('.cookie-agreement__button')) {
 			el.preventDefault();
+
+			try {
+				sessionCookiesAccept();
+			} catch (e) {
+				console.log(e.message);
+			}
 		}
 
 		if (targetElement.closest('[class*="-viewpass"]')) {
@@ -107,7 +128,16 @@ window.addEventListener('load', (e) => {
 				buttonEye.classList.add('_icon-eye');
 			}
 
-			targetElement.closest('form').classList.toggle('_pass-hidden')
+			targetElement.closest('form').classList.toggle('_pass-hidden');
+		}
+
+		async function sessionCookiesAccept() {
+			let response = await fetch('session_accept.php');
+			if (response.ok) {
+				return await response.json();
+			} else {
+				throw new Error('connection denied');
+			}
 		}
 	});
 });

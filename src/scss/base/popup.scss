@@ -79,20 +79,25 @@ body::after {
 	border-radius: 50%;
 	border: rem(1) solid $sep-color;
 
-	&::before {
-		color: $txt-3-color;
-		font-size: rem(12.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	svg {
+		fill: $txt-3-color;;
+		width: rem(12.5);
+		height: rem(12.5);
 		transition: all 0.3s ease;
-		transform: translateY(rem(2));
 	}
 
 	transition: all 0.3s ease;
 	@media (any-hover: hover) {
 		&:hover {
 			background-color: $main-color;
+			border: rem(1) solid $main-color;
 
-			&::before {
-				color: $white-color;
+			svg {
+				fill: $white-color;
 			}
 		}
 	}
