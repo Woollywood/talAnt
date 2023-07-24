@@ -125,15 +125,9 @@
 }
 
 .login-header {
-	@media (min-width: $mobileSmall) {
-		display: flex;
-		gap: rem(10);
-		align-items: center;
-	}
-
-	@media (max-width: $mobileSmall) {
-		display: none;
-	}
+	display: flex;
+	gap: rem(10);
+	align-items: center;
 
 	@media (any-hover: hover) {
 		&:hover {
@@ -163,12 +157,26 @@
 	}
 
 	&__text {
+		@media (max-width: $mobile) {
+			display: none;
+		}
+
 		color: $main-color;
 		font-size: rem(16);
 		font-weight: 600;
 		line-height: 160%;
 
 		transition: all 0.3s ease;
+
+		&_mobile {
+			@media (min-width: $mobile) {
+				display: none;
+			}
+
+			@media (max-width: $mobile) {
+				display: block;
+			}
+		}
 	}
 }
 
@@ -396,6 +404,29 @@
 
 		color: $white-color;
 		@include adaptiveValue('font-size', 16, 14, 0, 768, 375);
+	}
+
+	&__mobile {
+		@media (min-width: $mobile) {
+			display: none;
+		}
+
+		@include adaptiveValue('margin-left', math.div(-$containerPadding, 2), -15, 0, 768, 375);
+		@include adaptiveValue('margin-right', math.div(-$containerPadding, 2), -15, 0, 768, 375);
+
+		background-color: #fff;
+
+		> * {
+			padding: rem(18) rem(20);
+			justify-content: center;
+		}
+
+		* {
+			color: $main-color;
+			font-size: rem(14);
+			font-weight: 600;
+			line-height: 160%;
+		}
 	}
 
 	&__item {
